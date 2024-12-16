@@ -1,0 +1,94 @@
+.navbar {
+    display: flex;
+    position: sticky;
+    align-items: center;
+    justify-content: space-between;
+    top: 0px;
+    background: #658cc2;
+    background-blend-mode: darken;
+    background-size: cover;
+    color: white;
+    padding: 10px 20px;
+}
+
+
+nav ul li{
+    list-style: none;
+
+  }
+  
+  nav li{
+    display: inline-block;
+    padding-right: 20px;
+  }
+  
+  nav li::after{
+    content:'\a0 \a0 \a0 \a0 | \a0 ';
+  }
+  
+  nav ul li:last-of-type::after {
+   content: "";
+  }
+  
+  nav ul li a{
+    text-transform: uppercase;
+    text-decoration: none;
+    color: black;
+    letter-spacing: 6px;
+    font-size: .8em;
+  }
+  
+  nav ul li a:hover{
+    color: rgb(255, 238, 0);
+  }
+
+/*.nav-list {
+    display: flex;
+    list-style: none;
+}
+
+.nav-list li {
+    margin-right: 20px;
+}
+
+.nav-list li:last-child {
+    margin-right: 0;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-list li a:hover {
+    color: #ffd700;
+ 
+}
+
+.rightNav {
+    text-align: right;
+}
+
+#search {
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+}
+
+.btn {
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #000;
+    color: #ffd700;
+}*/
