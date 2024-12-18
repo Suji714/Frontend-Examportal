@@ -1,0 +1,20 @@
+[
+    {
+        "topic": "Java",
+        "question": "What is JVM?",
+        "optionA": "Java Virtual Machine",
+        "optionB": "Java Verification Model",
+        "optionC": "Java Variable Memory",
+        "optionD": "Java Virtual Memory",
+        "correctAnswer": "A"
+    },
+    {
+        "topic": "C++",
+        "question": "What is STL?",
+        "optionA": "Standard Template Library",
+        "optionB": "Static Template Library",
+        "optionC": "Standard Testing Library",
+        "optionD": "Static Testing Library",
+        "correctAnswer": "A"
+    }
+]

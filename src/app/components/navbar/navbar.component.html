@@ -1,9 +1,11 @@
 <nav class="navbar">
     <ul class="nav-list">
-        <li><a routerLink="/home">Home</a></li>
-        <li><a routerLink="/exam">Exams</a></li>
-        <li><a routerLink="/logout">Logout</a></li>   
-        <li><a routerLink="/aboutus">About Us</a></li>
+        <li><a *ngIf="!isUserLoggedIn" routerLink="/home">Home</a></li>
+        <li><a *ngIf="!isUserLoggedIn" routerLink="/exam">Exams</a></li>
+        <li> <a *ngIf="!isUserLoggedIn" routerLink="/admindashboard"> Admin Dashboard</a></li>
+        <li><a *ngIf="!isUserLoggedIn" routerLink="/logout" (click)="handleLogout()">Logout</a></li>   
+        <li><a *ngIf="!isUserLoggedIn" routerLink="/aboutus">About Us</a></li>
 
     </ul>
 </nav>
+

@@ -5,8 +5,9 @@
     <h2>Welcome to Exam Portal</h2>
     <p>Your all-in-one solution for secure and efficient online exams.</p>
     <div class="buttons">
-    <a routerLink="/login" class="btn">Login</a>
-    <a routerLink="/register" class="btn btn-alt">Register</a>
+    <a *ngIf="!isUserLoggedIn" routerLink="/login" class="btn">Login</a>
+    <a *ngIf="!isUserLoggedIn" routerLink="/register" class="btn btn-alt">Register</a>
+    <a *ngIf="!isUserLoggedIn" routerLink="/adminlogin" class="btn">Login as admin</a>
     </div>
     </div>
     </section>
@@ -30,7 +31,7 @@
     <section id="cta">
     <h2>Get Started Today!</h2>
     <p>Join thousands of educators and students using Exam Portal to simplify their examination process.</p>
-    <a href="#register" class="btn">Contact Us</a>
+    <a routerLink="/contactpage" class="btn">Contact Us</a>
     </section>
 
 

@@ -12,6 +12,8 @@
     "skipLibCheck": true,
     "isolatedModules": true,
     "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "noImplicitAny": false,
     "sourceMap": true,
     "declaration": false,
     "experimentalDecorators": true,
@@ -29,5 +31,6 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
+    
   }
 }

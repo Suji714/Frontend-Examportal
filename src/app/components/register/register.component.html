@@ -1,59 +1,130 @@
-<div class="wrapper">
-    <div class="title">
-      Registration Form
-    </div>
-    <div class="form">
-       <div class="inputfield">
-          <label>User Name</label>
-          <input type="text" class="input">
-       </div>  
-          
-       <div class="inputfield">
-          <label>Password</label>
-          <input type="password" class="input">
-       </div>  
-      
-        <!--- <div class="inputfield">
-          <label>Gender</label>
-          <div class="custom_select">
-            <select>
-              <option value="">Select</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </div>
-       </div>-->
-        <div class="inputfield">
-          <label>Email Address</label>
-          <input type="text" class="input">
-       </div> 
-      <div class="inputfield">
-          <label>Phone Number</label>
-          <input type="text" class="input">
-       </div> 
-      <div class="inputfield">
-          <label>City</label>
-          <input type="text" class="input">
-       </div> 
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-7">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h4>Welcome 😀</h4>
+        </div>
+        <div class="card-body">
+          <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <p> Please register here!</p>
+              <div class="col-md-6">
+            
+                <!-- First Name -->
+                <div class="form-group">
+                  <label for="fname">First Name</label>
+                  <input type="text" id="fname" class="form-control" formControlName="fname"
+                    [ngClass]="{'is-invalid': submitted && f['fname'].errors}" />
+                  <div *ngIf="submitted && f['fname'].errors" class="invalid-feedback">
+                    <div *ngIf="f['fname'].errors['required']">First name is required</div>
+                  </div>
+                </div>
 
-       <div class="inputfield">
-        <label>DOB</label>
-        <input type="date" class="input">
-       </div>
+                <!-- Last Name -->
+                <div class="form-group">
+                  <label for="lname">Last Name</label>
+                  <input type="text" id="lname" class="form-control" formControlName="lname"
+                    [ngClass]="{'is-invalid': submitted && f['lname'].errors}" />
+                  <div *ngIf="submitted && f['lname'].errors" class="invalid-feedback">
+                    <div *ngIf="f['lname'].errors['required']">Last name is required</div>
+                  </div>
+                </div>
 
-       <div class="inputfield">
-        <label>Qualification</label>
-        <input type="text" class="input">
-     </div> 
+                <!-- Email -->
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" class="form-control" formControlName="email"
+                    [ngClass]="{'is-invalid': submitted && f['email'].errors}" />
+                  <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                    <div *ngIf="f['email'].errors['required']">Email is required</div>
+                    <div *ngIf="f['email'].errors['email']">Invalid email format</div>
+                  </div>
+                </div>
 
-     <div class="inputfield">
-        <label>Year of Completion (month and year) </label>
-        <input type="month" class="input" >
-       </div>
-      
-   
-      <div class="inputfield">
-        <input type="submit" value="Register" class="btn">
-      </div>
-    </div>
-</div>
+                <!-- Password -->
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" id="password" class="form-control" formControlName="password"
+                    [ngClass]="{'is-invalid': submitted && f['password'].errors}" />
+                  <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                    <div *ngIf="f['password'].errors['required']">Password is required</div>
+                    <div *ngIf="f['password'].errors['minlength']">
+                      Password must be at least 6 characters
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Phone Number -->
+                <div class="form-group">
+                  <label for="phoneNo">Phone Number</label>
+                  <input type="text" id="phoneNo" class="form-control" formControlName="phoneNo"
+                    [ngClass]="{'is-invalid': submitted && f['phoneNo'].errors}" />
+                  <div *ngIf="submitted && f['phoneNo'].errors" class="invalid-feedback">
+                    <div *ngIf="f['phoneNo'].errors['required']">Phone number is required</div>
+                  </div>
+                </div>
+
+                <!-- Date of Birth -->
+                <div class="form-group">
+                  <label for="dob">Date of Birth</label>
+                  <input type="date" id="dob" class="form-control" formControlName="dob"
+                    [ngClass]="{'is-invalid': submitted && f['dob'].errors}" />
+                  <div *ngIf="submitted && f['dob'].errors" class="invalid-feedback">
+                    <div *ngIf="f['dob'].errors['required']">Date of birth is required</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+              
+                                   <!-- City -->
+                                   <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" class="form-control" formControlName="city"
+                                      [ngClass]="{'is-invalid': submitted && addressControls['city'].errors}" />
+                                    <div *ngIf="submitted && addressControls['city'].errors" class="invalid-feedback">
+                                      <div *ngIf="addressControls['city'].errors['required']">City is required</div>
+                                    </div>
+                                  </div>
+
+                                  <!-- Qualification name -->
+                                  <div class="form-group">
+                                    <label for="qname">Qualification</label>
+                                    <input type="text" id="qname" class="form-control" formControlName="qname"
+                                      [ngClass]="{'is-invalid': submitted && f['qname'].errors}" />
+                                    <div *ngIf="submitted && f['qname'].errors" class="invalid-feedback">
+                                      <div *ngIf="f['qname'].errors['required']">Last name is required</div>
+                                    </div>
+                                  </div>
+
+                                  <!-- Year of Qualification -->
+                                  <div class="form-group">
+                                    <label for="yoc">Year of Qualification</label>
+                                    <input type="month" id="yoc" class="form-control" formControlName="yoc"
+                                      [ngClass]="{'is-invalid': submitted && f['yoc'].errors}" />
+                                    <div *ngIf="submitted && f['yoc'].errors" class="invalid-feedback">
+                                      <div *ngIf="f['yoc'].errors['required']">Year of Qualification is required</div>
+                                    </div>
+                                  </div>
+                
+                              </div>
+                            </div>
+                
+                            <!-- Submit Button -->
+                            <div class="row">
+                              <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary mt-3">Register</button>
+                              </div>
+                            </div>
+                          </form>
+                
+                          <div *ngIf="successMessage" class="alert alert-success mt-3">
+                            {{ successMessage }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                 

@@ -23,7 +23,7 @@ nav ul li{
   }
   
   nav li::after{
-    content:'\a0 \a0 \a0 \a0 | \a0 ';
+    content:'\a0 \a0 \a0 \a0 \a0 | \a0  ';
   }
   
   nav ul li:last-of-type::after {

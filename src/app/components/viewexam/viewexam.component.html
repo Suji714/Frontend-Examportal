@@ -1,0 +1,22 @@
+<form *ngFor="let question of questions" class="question-form">
+  <fieldset>
+    <legend>{{ question.topic }}</legend>
+    <p>{{ question.questionId }}: {{ question.question }}</p>
+    <div class="option">
+      <input type="radio" id="{{question.questionId}}_optionA" name="{{question.questionId}}" value="A">
+      <label for="{{question.questionId}}_optionA">A. {{ question.optionA }}</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="{{question.questionId}}_optionB" name="{{question.questionId}}" value="B">
+      <label for="{{question.questionId}}_optionB">B. {{ question.optionB }}</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="{{question.questionId}}_optionC" name="{{question.questionId}}" value="C">
+      <label for="{{question.questionId}}_optionC">C. {{ question.optionC }}</label>
+    </div>
+    <div class="option">
+      <input type="radio" id="{{question.questionId}}_optionD" name="{{question.questionId}}" value="D">
+      <label for="{{question.questionId}}_optionD">D. {{ question.optionD }}</label>
+    </div>
+  </fieldset>
+</form>
