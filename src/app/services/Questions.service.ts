@@ -18,16 +18,16 @@ export interface Question {
   providedIn: 'root'
 })
 export class QuestionsService {
-  private baseUrl = 'http://localhost:8084/api/exam/questions/{topic}';
+  private baseUrl = 'http://localhost:8084/api/exam/questions/';
 
   constructor(private http: HttpClient) { }
   
-  getQuestions(topic: string): Observable<Question[]> {
+  getQuestions(topic: string): Observable<Questions[]> {
     const headers = new HttpHeaders({
       'Authorization': 'Bearer YOUR_ACCESS_TOKEN'
     });
 
     const url = `${this.baseUrl}${topic}`;
-    return this.http.get<Question[]>(url, { headers });
+    return this.http.get<Questions[]>(url, { headers });
   }
 }

@@ -25,7 +25,7 @@ export const routes: Routes = [
     {path: 'logout', component: LogoutComponent},
     {path: 'exam', component: ExamComponent},
     {path: 'admindashboard', component: AdmindashboardComponent},
-    {path: 'viewexam', component: ViewexamComponent},
+    {path: 'viewexam/:topic', component: ViewexamComponent},
     {path: 'contactpage', component: ContactpageComponent}
 
 ];

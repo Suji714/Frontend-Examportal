@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Question } from '../../services/Questions.service';
 import { QuestionsService } from '../../services/Questions.service';
 import { CommonModule } from '@angular/common';
 import { Questions } from '../../model/questions';
@@ -9,14 +8,14 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-viewexam',
   standalone: true,
-  imports: [CommonModule, ActivatedRoute],
+  imports: [CommonModule],
   templateUrl: './viewexam.component.html',
   styleUrl: './viewexam.component.css'
 })
 export class ViewexamComponent implements OnInit {
 
-  
-  questions: Question[] = [];
+ 
+  questions: Questions[] = [];
 
   constructor(private route: ActivatedRoute, private questionService:QuestionsService){}
 
@@ -38,7 +37,9 @@ export class ViewexamComponent implements OnInit {
   loadQuestions(topic: string) {
     this.questionService.getQuestions(topic).subscribe((res) => {
       this.questions = res;
-    });
+    }
+  );
+
   }
 
 }

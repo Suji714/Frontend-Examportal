@@ -11,12 +11,14 @@ import { ViewexamComponent } from '../components/viewexam/viewexam.component';
 import { QuestionsService } from '../services/Questions.service';
 
 const routes: Routes = [
-  {path: 'viewexam/:topic', component: ViewexamComponent}
+  {path: 'viewexam/:topic', component: ViewexamComponent},
+  {path: 'exam', component: ExamComponent}
 ]
 
 @NgModule({
   declarations: [ ExamComponent, ViewexamComponent],
   imports: [ CommonModule, BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot (routes) ],
+  exports: [RouterModule],
   providers: [ QuestionsService ],
   bootstrap: [ ExamComponent]
 })

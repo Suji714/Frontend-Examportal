@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { ViewexamComponent } from '../viewexam/viewexam.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-exam',
   standalone: true,
-  imports: [RouterLink, CommonModule, Router, ViewexamComponent],
+  imports: [ CommonModule, FormsModule],
   templateUrl: './exam.component.html',
   styleUrl: './exam.component.css'
 })
