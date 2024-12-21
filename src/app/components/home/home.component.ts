@@ -16,6 +16,7 @@ export class HomeComponent {
   title = 'exam-portal';
   username :string='';
   isUserLoggedIn:boolean=false; 
+  isAdminLoggedIn:boolean=false; 
 
   constructor(public authService: AuthenticationService, private router:Router) {}
 
@@ -26,7 +27,8 @@ export class HomeComponent {
   ngOnInit() {
     this.authService.userName$.subscribe((email: string) => {
       this.username = email;
-      this.isUserLoggedIn=this.authService.isLoggedIn();
+      this.isUserLoggedIn=this.authService.isUserLoggedIn();
+      this.isAdminLoggedIn=this.authService.isAdminLoggedIn();
     });
 
   }

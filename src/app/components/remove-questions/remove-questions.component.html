@@ -1,0 +1,23 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Remove Questions</h4>
+        <form (ngSubmit)="onRemoveQuestions()">
+          <div class="form-group">
+            <label for="removeTopic">Select Topic</label>
+            <select id="removeTopic" [(ngModel)]="removeQuestionTopic" name="removeTopic" class="form-control" required>
+                <option value="java">Java</option>
+                <option value="python">Python</option>
+                <option value="sql">SQL</option>
+                <option value="c++">C++</option>
+                <option value="javascript">JavaScript</option>
+                <option value="php">PHP</option>
+              <!-- Add more topics as needed -->
+            </select>
+          </div>
+          <button type="submit" class="btn btn-danger mt-3">Remove Questions</button>
+        </form>
+      </div>
+    </div>
+  </div>
+ 

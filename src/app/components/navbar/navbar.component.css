@@ -1,4 +1,4 @@
-.navbar {
+/*.navbar {
     display: flex;
     position: sticky;
     align-items: center;
@@ -22,33 +22,16 @@ nav ul li{
     padding-right: 20px;
   }
   
-  nav li::after{
-    content:'\a0 \a0 \a0 \a0 \a0 | \a0  ';
-  }
   
-  nav ul li:last-of-type::after {
-   content: "";
-  }
-  
-  nav ul li a{
-    text-transform: uppercase;
-    text-decoration: none;
-    color: black;
-    letter-spacing: 6px;
-    font-size: .8em;
-  }
-  
-  nav ul li a:hover{
-    color: rgb(255, 238, 0);
-  }
-
-/*.nav-list {
+.nav-list {
     display: flex;
     list-style: none;
+    margin: 0 auto;
 }
 
 .nav-list li {
     margin-right: 20px;
+    
 }
 
 .nav-list li:last-child {
@@ -92,3 +75,79 @@ nav ul li{
     background-color: #000;
     color: #ffd700;
 }*/
+
+.navbar {
+    background-color: #2c3e50;
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav-list li {
+    position: relative;
+}
+
+.nav-list li a {
+    display: block;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+.nav-list li a:hover {
+    color: #3498db;
+    animation: hoverEffect 0.3s forwards;
+}
+
+.nav-list li a.active {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+    animation: activeEffect 0.3s forwards;
+}
+
+.nav-list li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #3498db;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-list li a:hover::after,
+.nav-list li a.active::after {
+    width: 100%;
+}
+
+@keyframes hoverEffect {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes activeEffect {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}

@@ -16,10 +16,14 @@ export class ExamComponent {
   
     constructor(private router: Router){}
   
-    navigateToTopic() {
-      if (this.selectedTopic) {
-        this.router.navigate(['/viewexam', this.selectedTopic]);
-      }
+    // navigateToTopic() {
+    //   if (this.selectedTopic) {
+    //     this.router.navigate(['/viewexam', this.selectedTopic]);
+    //   }
+    // }
+
+    navigateToTopic(topic: string) {
+      this.router.navigate(['/viewexam', topic]);
     }
 
 }

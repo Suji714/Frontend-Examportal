@@ -11,25 +11,25 @@ import { AuthenticationService } from '../../services/authentication.service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+  username: string = '';
+  isUserLoggedIn: boolean = false;
+  isAdminLoggedIn: boolean = false;
  
-  title = 'exam-portal';
-  username :string='';
-  isUserLoggedIn:boolean=false; 
-
-  constructor(public authService: AuthenticationService) {}
-
+  constructor(private authService: AuthenticationService) {}
+ 
   ngOnInit() {
     this.authService.userName$.subscribe((email: string) => {
-      this.username = email;
-      this.isUserLoggedIn=this.authService.isLoggedIn();
-      });
-   
-
+      // this.username = email;
+      this.isUserLoggedIn = this.authService.isUserLoggedIn();
+      this.isAdminLoggedIn = this.authService.isAdminLoggedIn();
+     
+      console.log('Admin: token: '+ this.isAdminLoggedIn);
+      console.log('User :Token:  '+ this.isUserLoggedIn);
+    });
   }
-
-    
-  handleLogout(){
+ 
+  handleLogout() {
     this.authService.logout();
   }
-
+ 
 }

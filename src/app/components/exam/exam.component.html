@@ -1,19 +1,16 @@
 <div class="container">
-    <!-- Top Navigation -->
-    
-        <h1> Available Exams</h1>
-        <p>Please select any one of them.</p>
-    
-        <div>
-          <label for="topicSelect">Select Topic:</label>
-          <select id="topicSelect" [(ngModel)]="selectedTopic">
-            <option value="Java">Java</option>
-            <option value="C++">C++</option>
-            <option value="Python">Python</option>
-            <!-- Add more topics as needed -->
-          </select>
-          <button (click)="navigateToTopic()">Go</button>
-        </div>
 
+  <h1>Available Exams</h1>
+  <p>Please select any one of them.</p>
+
+      <div class="button-group">
+          <button class="button-55" type="button" (click)="navigateToTopic('Java')">Java</button>
+          <button class="button-55" type="button" (click)="navigateToTopic('C++')">C++</button> 
+          <button class="button-55" type="button" (click)="navigateToTopic('Python')">Python</button>
+          <button class="button-55" type="button" (click)="navigateToTopic('JavaScript')">JavaScript</button>
+          <button class="button-55" type="button" (click)="navigateToTopic('SQL')">SQL</button>
+          <button class="button-55" type="button" (click)="navigateToTopic('PHP')">PHP</button>
+          <!-- Add more buttons as needed -->
+      </div>
+  
 </div>
-

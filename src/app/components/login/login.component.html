@@ -1,13 +1,48 @@
 <div class="login-container">
-    <div class="card">
-      <h1>LOGIN</h1>
-      <form>
-        <input type="text" placeholder="Username" />
-        <input type="password" placeholder="Password" />
-        <button type="submit">Login</button>
-        <div class="forgot-password">
-          <a href="#">Forgot Password?</a>
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+            <div class="card">
+
+                <h1> USER LOGIN </h1>
+
+                <div class="card-body">
+                    <form #loginForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" class="form-control"
+                                [(ngModel)]="loginData.email" required #email="ngModel"
+                                [ngClass]="{'is-invalid': email.invalid && (email.dirty || email.touched)}" />
+                            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="invalid-feedback">
+                                <div *ngIf="email.errors?.['required']">Email is required.</div>
+                                <div *ngIf="email.errors?.['email']">Invalid email format.</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mt-3">
+                            <label for="password">Password:</label>
+                            <input type="password" id="password" name="password" class="form-control"
+                                [(ngModel)]="loginData.password" required #password="ngModel"
+                                [ngClass]="{'is-invalid': password.invalid && (password.dirty || password.touched)}" />
+                            <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                                class="invalid-feedback">
+                                <div *ngIf="password.errors?.['required']">Password is required.</div>
+                            </div>
+                        </div>
+
+                        <button type="submit">Login</button>
+                        <div class="forgot-password">
+                            <a href="#">Forgot Password?</a>
+                        </div>
+                        <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+                            {{ errorMessage }}
+                        </div>
+                        <div *ngIf="successMessage" class="alert alert-success mt-3">
+                            {{ successMessage }}
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-      </form>
     </div>
-  </div>
+</div>

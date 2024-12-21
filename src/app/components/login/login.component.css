@@ -3,7 +3,7 @@ login-container {
     justify-content: center;
     align-items: center;
     height: 100%;
-   
+  
   }
   
   .card {
@@ -48,10 +48,11 @@ login-container {
   .forgot-password {
     text-align: center;
     margin-top: 10px;
+   
   }
   
   .forgot-password a {
-    color: #3498db;
+    color:#a6a0a0;
     text-decoration: none;
   }
   

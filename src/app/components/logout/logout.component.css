@@ -1,6 +1,7 @@
 .logout {
     text-align: center;
     padding: 40px 0;
+    
   }
 h1 {
     color: #88B04B;
@@ -27,4 +28,18 @@ i {
   box-shadow: 0 2px 3px #C8D0D8;
   display: inline-block;
   margin: 0 auto;
+  background: linear-gradient(90deg, #b9deed, #efefef);	border-radius: 8px;
+  animation: fadeIn 1s ease-in-out;
+
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
 }

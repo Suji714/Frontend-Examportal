@@ -8,6 +8,7 @@ export class Questions {
     optionC: string;
     optionD: string;
     correctAnswer: string;
+    selectedOption?: string;
   
     constructor(
       id: number,

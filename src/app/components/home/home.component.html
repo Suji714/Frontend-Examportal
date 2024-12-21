@@ -1,13 +1,11 @@
-
-
 <section class="hero" id="home">
     <div class="hero-content">
     <h2>Welcome to Exam Portal</h2>
     <p>Your all-in-one solution for secure and efficient online exams.</p>
     <div class="buttons">
-    <a *ngIf="!isUserLoggedIn" routerLink="/login" class="btn">Login</a>
-    <a *ngIf="!isUserLoggedIn" routerLink="/register" class="btn btn-alt">Register</a>
-    <a *ngIf="!isUserLoggedIn" routerLink="/adminlogin" class="btn">Login as admin</a>
+    <a *ngIf="!isUserLoggedIn && !isAdminLoggedIn"  routerLink="/login" class="button">Login 🗝️</a>
+    <a *ngIf="!isUserLoggedIn && !isAdminLoggedIn" routerLink="/register" class="button">Register ➡️</a>
+    <a *ngIf="!isUserLoggedIn && !isAdminLoggedIn" routerLink="/adminlogin" class="button">Login as admin 🔰</a>
     </div>
     </div>
     </section>
@@ -23,7 +21,7 @@
     </section>
     <section id="about">
     <h2>About Exam Portal</h2>
-    <p>
+    <p id="about-para">
                We aim to revolutionize the way online exams are conducted. Our platform simplifies assessments
                for schools, universities, and training centers with cutting-edge technology and a commitment to excellence.
     </p>
@@ -31,7 +29,20 @@
     <section id="cta">
     <h2>Get Started Today!</h2>
     <p>Join thousands of educators and students using Exam Portal to simplify their examination process.</p>
-    <a routerLink="/contactpage" class="btn">Contact Us</a>
+    <a routerLink="/contactpage" class="cssbuttons-io-button">Contact Us   <div class="icon">
+        <svg
+          height="24"
+          width="24"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path
+            d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+            fill="currentColor"
+          ></path>
+        </svg>
+      </div> </a>
     </section>
 
 

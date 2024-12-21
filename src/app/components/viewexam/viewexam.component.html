@@ -1,22 +1,38 @@
-<form *ngFor="let question of questions" class="question-form">
+
+<div class="header">
+  <h1>{{ questionTopic }}</h1>
+  <div id="timer">{{ minutes }}:{{ seconds | number: '2.0' }}</div>
+</div>
+
+<form *ngFor="let question of questions" class="question-form" (ngSubmit)="submitExam()" #examForm="ngForm">
   <fieldset>
-    <legend>{{ question.topic }}</legend>
-    <p>{{ question.questionId }}: {{ question.question }}</p>
+    <legend>Question {{ question.questionId }}</legend>
+    <p>{{ question.question }}</p>
     <div class="option">
-      <input type="radio" id="{{question.questionId}}_optionA" name="{{question.questionId}}" value="A">
+      <input type="radio" id="{{question.questionId}}_optionA" name="{{question.questionId}}" value="A" [(ngModel)]="question.selectedOption">
       <label for="{{question.questionId}}_optionA">A. {{ question.optionA }}</label>
     </div>
     <div class="option">
-      <input type="radio" id="{{question.questionId}}_optionB" name="{{question.questionId}}" value="B">
+      <input type="radio" id="{{question.questionId}}_optionB" name="{{question.questionId}}" value="B" [(ngModel)]="question.selectedOption">
       <label for="{{question.questionId}}_optionB">B. {{ question.optionB }}</label>
     </div>
     <div class="option">
-      <input type="radio" id="{{question.questionId}}_optionC" name="{{question.questionId}}" value="C">
+      <input type="radio" id="{{question.questionId}}_optionC" name="{{question.questionId}}" value="C" [(ngModel)]="question.selectedOption">
       <label for="{{question.questionId}}_optionC">C. {{ question.optionC }}</label>
     </div>
     <div class="option">
-      <input type="radio" id="{{question.questionId}}_optionD" name="{{question.questionId}}" value="D">
+      <input type="radio" id="{{question.questionId}}_optionD" name="{{question.questionId}}" value="D" [(ngModel)]="question.selectedOption">
       <label for="{{question.questionId}}_optionD">D. {{ question.optionD }}</label>
     </div>
   </fieldset>
 </form>
+
+
+<button>
+  <span class="transition"></span>
+  <span class="gradient"></span>
+  <span class="label"  (click)="submitExam()">Submit</span>
+</button>
+
+<!-- <button (click)="submitExam()">Submit</button> -->
+
