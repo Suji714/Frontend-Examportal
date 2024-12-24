@@ -1,4 +1,3 @@
-
 <div class="header">
   <h1>{{ questionTopic }}</h1>
   <div id="timer">{{ minutes }}:{{ seconds | number: '2.0' }}</div>
@@ -27,12 +26,8 @@
   </fieldset>
 </form>
 
-
 <button>
   <span class="transition"></span>
   <span class="gradient"></span>
-  <span class="label"  (click)="submitExam()">Submit</span>
+  <span class="label" (click)="submitExam()">Submit</span>
 </button>
-
-<!-- <button (click)="submitExam()">Submit</button> -->
-

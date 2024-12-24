@@ -38,7 +38,8 @@ export class ViewexamComponent implements OnInit {
               private studentAnswerService: StudentanswerService,
               private router: Router,
               private modalService: NgbModal,
-              private authService: AuthenticationService
+              private authService: AuthenticationService,
+             
    ){
 
     this.timeLeft = 30 * 60; // 30 minutes in seconds
@@ -58,9 +59,25 @@ export class ViewexamComponent implements OnInit {
       const topic = params.get('topic');
       if (topic) {
         this.loadQuestions(topic);
-        this.questionTopic = topic; // Set the question topic      
+        this.questionTopic = topic; // Set the question topic   
+        this.toggleFullScreen();
       }
     });
+    
+  }
+
+  toggleFullScreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(err => {
+        console.error(`Error attempting to enable fullscreen mode: ${err.message} (${err.name})`);
+      });
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen().catch(err => {
+          console.error(`Error attempting to exit fullscreen mode: ${err.message} (${err.name})`);
+        });
+      }
+    }
   }
 
   startTimer() {
@@ -150,4 +167,6 @@ export class ViewexamComponent implements OnInit {
         }, 500); // Redirect after 2 seconds
       });
   }
+
+  
 }

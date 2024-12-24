@@ -1,5 +1,5 @@
 <div class="app">
-    <header class="app-header">
+    <header class="app-header" *ngIf="!isViewExamActive">
       <img src="../images/logo.png" class="app-logo" alt="logo">
       
       <div class="keyboard">
@@ -19,7 +19,7 @@
     </header>
 
     <!--Render Navbar Component-->
-    <app-navbar> </app-navbar>
+    <app-navbar *ngIf="!isViewExamActive"> </app-navbar>
 
     <div style="background-image: url(/images/background.png) ; background-repeat: no-repeat;
     background-size: cover;"> 
@@ -29,7 +29,7 @@
     </section>
     </div>
   
-  <footer class="footer"> 
+  <footer class="footer" *ngIf="!isViewExamActive">
     <p>&copy; All Rights Reserved to Coforge Ltd</p>
   </footer>
   

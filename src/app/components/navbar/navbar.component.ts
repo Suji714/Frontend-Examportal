@@ -15,7 +15,9 @@ export class NavbarComponent {
   isUserLoggedIn: boolean = false;
   isAdminLoggedIn: boolean = false;
  
-  constructor(private authService: AuthenticationService) {}
+  constructor(private authService: AuthenticationService,
+              
+  ) {}
  
   ngOnInit() {
     this.authService.userName$.subscribe((email: string) => {
