@@ -13,11 +13,12 @@ export class ViewReportsComponent {
 
    
   reports: { firstname: string, topic: string, score: number }[] = [];
+   error: string | null = null;
  
   constructor(private http: HttpClient) {}
  
   onViewReports(): void {
-    this.http.get<any[]>('http://localhost:8086/api/admin/view-reports').subscribe(
+    this.http.get<any[]>('http://localhost:7777/api/admin/view-reports').subscribe(
       response => {
         console.log('Reports fetched successfully', response);
         this.reports = response.map(item => ({
@@ -25,10 +26,15 @@ export class ViewReportsComponent {
           topic: item[1],
           score: item[2]
         }));
+        this.error = null; // Clear any previous error message
       },
       error => {
         console.error('Error fetching reports', error);
-        alert('Error fetching reports');
+        if (error.status === 503) {
+          this.error = 'Service Unavailable. Please try again later.';
+        } else {
+          this.error = 'An unexpected error occurred.';
+        }
       }
     );
   }

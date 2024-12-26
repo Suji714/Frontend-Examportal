@@ -18,6 +18,7 @@ import { ContactpageComponent } from './components/contactpage/contactpage.compo
 import { AddQuestionsComponent } from './components/add-questions/add-questions.component';
 import { RemoveQuestionsComponent } from './components/remove-questions/remove-questions.component';
 import { ViewReportsComponent } from './components/view-reports/view-reports.component';
+import { UserScoreComponent } from './components/user-score/user-score.component';
 
 export const routes: Routes = [
     {path:'',redirectTo:'home',pathMatch:'full'},
@@ -35,6 +36,7 @@ export const routes: Routes = [
     {path: 'admin/add-questions', component: AddQuestionsComponent},
     {path: 'admin/remove-questions', component: RemoveQuestionsComponent},
     {path: 'admin/view-reports', component: ViewReportsComponent},
+    {path: 'score', component: UserScoreComponent}
 
 ];
 

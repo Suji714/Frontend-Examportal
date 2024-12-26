@@ -18,7 +18,7 @@ export class RemoveQuestionsComponent {
  
   onRemoveQuestions(): void {
     if (this.removeQuestionTopic) {
-      this.http.delete(`http://localhost:8086/api/admin/remove-questions/${this.removeQuestionTopic}` ,{ responseType: 'text' }).subscribe(
+      this.http.delete(`http://localhost:7777/api/admin/remove-questions/${this.removeQuestionTopic}` ,{ responseType: 'text' }).subscribe(
         response => {
           console.log('Questions removed successfully', response);
           alert('Questions removed successfully');

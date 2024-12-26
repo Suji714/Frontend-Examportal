@@ -1,29 +1,34 @@
 <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h4>Welcome, </h4>
-        <p> Click below to view the reports  👇</p>
-        <button class="btn btn-info mt-3" (click)="onViewReports()">View All Reports</button>
-        <div *ngIf="reports.length > 0" class="mt-3">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>First Name</th>
-                <th>Topic</th>
-                <th>Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let report of reports">
-                <td>{{ report.firstname }}</td>
-                <td>{{ report.topic }}</td>
-                <td>{{ report.score }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h4>Welcome, </h4>
+      <p> Click below to view the reports  👇</p>
+      <button class="btn btn-info mt-3" (click)="onViewReports()">View All Reports</button>
+      
+      <!-- Display error message if there is an error -->
+      <div *ngIf="error" class="mt-3">
+        <p style="color: red;">{{ error }}</p>
+      </div>
+      
+      <!-- Display reports if there are any -->
+      <div *ngIf="reports.length > 0 && !error" class="mt-3">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Topic</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let report of reports">
+              <td>{{ report.firstname }}</td>
+              <td>{{ report.topic }}</td>
+              <td>{{ report.score }}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
- 
- 
+</div>

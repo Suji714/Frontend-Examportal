@@ -31,7 +31,7 @@ export class AddQuestionsComponent {
       console.log('Selected File:', this.selectedFile);
       console.log('New Question Topic:', this.newQuestionTopic);
  
-      this.http.post('http://localhost:8086/api/admin/add-questions', formData, { responseType: 'text' }).subscribe(
+      this.http.post('http://localhost:7777/api/admin/add-questions', formData, { responseType: 'text' }).subscribe(
         response => {
           console.log('Questions added successfully', response);
           alert('Questions added successfully');
