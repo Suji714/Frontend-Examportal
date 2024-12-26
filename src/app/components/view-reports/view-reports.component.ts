@@ -17,7 +17,7 @@ export class ViewReportsComponent {
   constructor(private http: HttpClient) {}
  
   onViewReports(): void {
-    this.http.get<any[]>('http://localhost:8086/api/admin/view-reports').subscribe(
+    this.http.get<any[]>('http://localhost:7777/api/admin/view-reports').subscribe(
       response => {
         console.log('Reports fetched successfully', response);
         this.reports = response.map(item => ({

@@ -2,9 +2,11 @@
     <ul class="nav-list">
       <li><a routerLink="/home">Home</a></li>
       <li><a *ngIf="isUserLoggedIn && !isAdminLoggedIn" routerLink="/exam">Exams</a></li>
+      <li><a *ngIf="isUserLoggedIn && !isAdminLoggedIn" routerLink="/reports">Reports</a></li>
       <li><a *ngIf="isAdminLoggedIn && !isUserLoggedIn" routerLink="/admindashboard">Admin Dashboard</a></li>
       <li><a *ngIf="isUserLoggedIn || isAdminLoggedIn" routerLink="/logout" (click)="handleLogout()">Logout</a></li>
       <li><a *ngIf="!isUserLoggedIn && !isAdminLoggedIn" routerLink="/aboutus">About Us</a></li>
+
     </ul>
   </nav>
    

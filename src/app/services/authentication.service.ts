@@ -19,8 +19,8 @@ export class AuthenticationService {
   }
 
    //Spring Boot REST-API end points
-    private apiUrl='http://localhost:8083/api/user/register';
-    private apiUrl1='http://localhost:8083/api/user/login';
+    private apiUrl='http://localhost:7777/api/user/register';
+    private apiUrl1='http://localhost:7777/api/user/login';
     
 
     registerUser(userData: any): Observable<string> {

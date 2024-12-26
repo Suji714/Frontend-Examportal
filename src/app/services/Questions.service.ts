@@ -18,7 +18,7 @@ export interface Question {
   providedIn: 'root'
 })
 export class QuestionsService {
-  private baseUrl = 'http://localhost:8083/api/exam/questions/';
+  private baseUrl = 'http://localhost:7777/api/exam/questions/';
 
   constructor(private http: HttpClient) { }
   
