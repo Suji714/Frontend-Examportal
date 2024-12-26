@@ -1,0 +1,49 @@
+/* Container styles */
+div {
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Light gradient background */
+    border-radius: 12px; /* More rounded corners */
+    padding: 30px; /* Increased padding */
+    text-align: center; /* Center align text */
+    max-width: 600px; /* Max width */
+    margin: 40px auto; /* Center align container with more space around */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.3s; /* Smooth transition effect */
+}
+
+/* Add a hover effect to the container */
+div:hover {
+    transform: translateY(-10px); /* Slight lift effect on hover */
+}
+
+/* Heading styles */
+h2 {
+    font-size: 2.5rem; /* Larger font size */
+    font-weight: 800; /* Bolder text */
+    color: #333; /* Dark grey text */
+    margin-bottom: 25px; /* More space below heading */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1.5px; /* Increased letter spacing */
+    background: linear-gradient(135deg, #667eea, #764ba2); /* Gradient text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Button styles */
+button {
+    background-color: #ff6b6b; /* Soft red background */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    border-radius: 50px; /* Pill-shaped button */
+    padding: 12px 25px; /* Padding */
+    font-size: 1.1rem; /* Slightly larger font size */
+    font-weight: 600; /* Semi-bold text */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition effect */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for button */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #e05252; /* Darker red on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+}

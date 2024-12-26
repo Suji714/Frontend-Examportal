@@ -13,6 +13,7 @@ export class ViewReportsComponent {
 
    
   reports: { firstname: string, topic: string, score: number }[] = [];
+   error: string | null = null;
  
   constructor(private http: HttpClient) {}
  
@@ -25,10 +26,15 @@ export class ViewReportsComponent {
           topic: item[1],
           score: item[2]
         }));
+        this.error = null; // Clear any previous error message
       },
       error => {
         console.error('Error fetching reports', error);
-        alert('Error fetching reports');
+        if (error.status === 503) {
+          this.error = 'Service Unavailable. Please try again later.';
+        } else {
+          this.error = 'An unexpected error occurred.';
+        }
       }
     );
   }
