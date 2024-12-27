@@ -1,49 +1,280 @@
-/* Container styles */
-div {
-    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Light gradient background */
-    border-radius: 12px; /* More rounded corners */
-    padding: 30px; /* Increased padding */
-    text-align: center; /* Center align text */
-    max-width: 600px; /* Max width */
-    margin: 40px auto; /* Center align container with more space around */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    transition: transform 0.3s; /* Smooth transition effect */
+.container {
+    background: linear-gradient(90deg, #b9deed, #efefef);	border-radius: 8px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin-top:50px;
+    margin-bottom: 60px;
 }
 
-/* Add a hover effect to the container */
-div:hover {
-    transform: translateY(-10px); /* Slight lift effect on hover */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Heading styles */
 h2 {
-    font-size: 2.5rem; /* Larger font size */
-    font-weight: 800; /* Bolder text */
+    font-size: 2.0rem; /* Larger font size */
+    font-weight: 500; /* Bolder text */
     color: #333; /* Dark grey text */
     margin-bottom: 25px; /* More space below heading */
     text-transform: uppercase; /* Uppercase text */
     letter-spacing: 1.5px; /* Increased letter spacing */
-    background: linear-gradient(135deg, #667eea, #764ba2); /* Gradient text */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    
 }
 
-/* Button styles */
-button {
-    background-color: #ff6b6b; /* Soft red background */
-    color: #fff; /* White text */
-    border: none; /* No border */
-    border-radius: 50px; /* Pill-shaped button */
-    padding: 12px 25px; /* Padding */
-    font-size: 1.1rem; /* Slightly larger font size */
-    font-weight: 600; /* Semi-bold text */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition effect */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow for button */
-}
-
-/* Button hover effect */
-button:hover {
-    background-color: #e05252; /* Darker red on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
-}
+@keyframes button-shadow{
+    from{
+      transform: rotate(0);
+      bottom: -5px;
+      right: -5px;
+      opacity: 1;
+    }to{
+      transform: rotate(40deg);
+      bottom: 50px;
+      right: -60px;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes button-arrow-rotate{
+    0%{
+        width: 15px;
+        margin: -25px auto 0;
+    }1%{
+        width: 10px;
+        height: 0px;
+        margin-top: 15px;
+        transform: rotate(45deg);
+    }100%{
+        width: 10px;
+        margin-top: 15px;
+        transform: rotate(45deg);
+        height: 35px;
+    }
+  }
+  
+  @keyframes button-arrow-down{
+    from{
+        bottom: -25px;
+        opacity: 1;
+    }to{
+        bottom: -40px;
+        opacity: 0;
+    }
+  }
+  
+  @keyframes button-arrow-up{
+    0%{
+        height: 20px;
+        transform: rotateZ(45deg);
+        right: -7px;
+    }1%{
+        right: 0px;
+        height: 10px;
+        width: 0;
+        transform: rotateZ(0);
+    }100%{
+        right: 0px;
+        height: 10px;
+        width: 20px;
+        transform: rotateZ(0);
+    }
+  }
+  
+  @keyframes button-shadow{
+    from{
+      transform: rotate(0);
+      bottom: -5px;
+      right: -5px;
+      opacity: 1;
+    }to{
+      transform: rotate(40deg);
+      bottom: 50px;
+      right: -60px;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes button-arrow-rotate{
+    0%{
+        width: 15px;
+        margin: -25px auto 0;
+    }1%{
+        width: 10px;
+        height: 0px;
+        margin-top: 15px;
+        transform: rotate(45deg);
+    }100%{
+        width: 10px;
+        margin-top: 15px;
+        transform: rotate(45deg);
+        height: 35px;
+    }
+  }
+  
+  @keyframes button-arrow-down{
+    from{
+        bottom: -25px;
+        opacity: 1;
+    }to{
+        bottom: -40px;
+        opacity: 0;
+    }
+  }
+  
+  @keyframes button-shadow{
+    from{
+      transform: rotate(0);
+      bottom: -5px;
+      right: -5px;
+      opacity: 1;
+    }to{
+      transform: rotate(40deg);
+      bottom: 50px;
+      right: -60px;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes button-arrow-rotate{
+    0%{
+        width: 15px;
+        margin: -25px auto 0;
+    }1%{
+        width: 10px;
+        height: 0px;
+        margin-top: 15px;
+        transform: rotate(45deg);
+    }100%{
+        width: 10px;
+        margin-top: 15px;
+        transform: rotate(45deg);
+        height: 35px;
+    }
+  }
+  
+  @keyframes button-arrow-down{
+    from{
+        bottom: -25px;
+        opacity: 1;
+    }to{
+        bottom: -40px;
+        opacity: 0;
+    }
+  }
+  
+  @keyframes button-arrow-up{
+    0%{
+        height: 20px;
+        transform: rotateZ(45deg);
+        right: -7px;
+    }1%{
+        right: 0px;
+        height: 10px;
+        width: 0;
+        transform: rotateZ(0);
+    }100%{
+        right: 0px;
+        height: 10px;
+        width: 20px;
+        transform: rotateZ(0);
+    }
+  }
+  
+  button{
+    background-color: #F0FFFF;
+    width: 140px;
+    height: 70px;
+    border: none;
+    outline: none;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .5s;
+    margin: 0 auto;
+    
+    .arrow{
+      height: 25px;
+      width: 15px;
+      background-color: #99f3bd;
+      border-radius: 2px;
+      margin: -25px auto 0;
+      position: relative;
+      &:after{
+        content:'';
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        background-color: #99f3bd;
+        border-radius: 2px;
+        transform: rotateZ(45deg) translate(1px,7px);
+        bottom: 0;
+        right: -7px;
+        transition: all .5s;
+        transition-delay: .5s;
+      }
+      &:before{
+        content: '';
+        background-color: #99f3bd;
+        width: 25px;
+        height: 10px;
+        position: absolute;
+        left: -5px;
+        bottom: -25px;
+        border-radius: 2px;
+        transition: all .5s;
+      }
+    }
+    
+    &:after,&:before{
+      content:'';
+      position: absolute;
+      z-index: -1;
+      background-color: #99f3bd;
+      height: 100%;
+      width: 100%;
+      bottom: -5px;
+      right: -5px;
+      border-radius: 5px;
+    }
+    
+    &:after{
+        animation-play-state: pause; 
+    }
+    
+    &:active{
+      width: 180px;
+      height: 90px;
+    }
+    
+    &:focus{
+      &:after{   
+        animation: button-shadow 1s;
+      }
+      
+      .arrow{
+        animation: button-arrow-rotate .5s forwards;
+        animation-delay: .5s;
+        &:after{
+          animation: button-arrow-up .5s forwards;
+          animation-delay: .5s;
+        }
+        &:before{
+          animation: button-arrow-down .5s forwards;
+        }
+      }
+    }
+  }
